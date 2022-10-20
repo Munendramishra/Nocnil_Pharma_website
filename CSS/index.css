@@ -1,0 +1,296 @@
+body {
+   font-family: 'Open Sans',Helvetica Neue, Helvetica, Arial, sans-serif;
+  
+  height: 100%;
+  width: 100%;
+}
+
+.innp00{
+  width: 100%;
+  height: 40px;
+  padding-top: 0.5%;
+  font-size: 20px;
+  background-color: #900C3F;
+  color: white;
+}
+.innp01{
+  height: 70%;
+  width: 24%;
+  color: white;
+  margin-left: 4%;
+  float: left;
+}
+.innp011{
+  height: 100%;
+  width: 37%;
+  float: left;
+}
+.innp012{
+  height: 100%;
+  width: 5%;
+  float: left;
+}
+.innp013{
+  height: 100%;
+  width: 50%;
+  margin-left: 4%;
+  float: left;
+}
+.innp02{
+   height: 70%;
+  width: 42%;
+  color: white;
+  font-size: 100%;
+   font-family: 'Open Sans',Helvetica Neue, Helvetica, Arial, sans-serif;
+  margin-left: 8%;
+  float: left;
+}
+.innp03{
+  height: 70%;
+  width: 7%;
+  color: white;
+  margin-left: 10%;
+  float: left;
+}
+.innp01:hover,.innp02:hover,.innp03:hover{
+  color: #FFC300;
+}
+.innp10{
+  height: 65px;
+  width: 100%;
+  background-color: white;
+  box-shadow: 0px 2px 0px 0px  #C1C0C0;
+}
+.innp11{
+  height: 90%;
+  float: left;
+  margin-top: 0.4%;
+  margin-left: 2%;
+  margin-right: 1%;
+  width: 9%;
+}
+.innp11 img{
+  height: 100%;
+  width: 100%;
+}
+.innp13,.innp12,.innp14,.innp17,.innp18{
+  height: 85%;
+  margin-left: 2%;
+  float: right;
+  margin-top: 0.7%;
+  width: auto;
+  padding-top: 1%;
+  color: black;
+   font-family: 'Open Sans',Helvetica Neue, Helvetica, Arial, sans-serif;
+  text-align: center;
+
+  min-width: 9%;
+}
+.innp12:hover,.innp13:hover,.innp14:hover,.innp17:hover,.innp18:hover{
+  border-bottom: 3px solid #FFC300;
+}
+.innp121,.innp131,.innp141,.innp171,.innp181{
+  height: 20%;
+  width: 100%;
+  margin-top: 1%;
+  font-size: 14px;
+  color: black;
+  border: 0.5px solid black;
+  text-align: center;
+}
+.about_container
+{
+  width: 100%;
+   box-shadow: 3px 3px 3px lightgray;
+   margin-top: -3%;
+   /*background-color: lavender;*/
+   max-height:600px;
+   /*background-image: url(img/about_backg.jpg);*/
+   background: rgba(255,255,255,1);
+background: -moz-linear-gradient(-45deg, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: -webkit-gradient(left top, right bottom, color-stop(0%, rgba(255,255,255,1)), color-stop(47%, rgba(246,246,246,1)), color-stop(100%, rgba(237,237,237,1)));
+background: -webkit-linear-gradient(-45deg, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: -o-linear-gradient(-45deg, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: -ms-linear-gradient(-45deg, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+background: linear-gradient(135deg, rgba(255,255,255,1) 0%, rgba(246,246,246,1) 47%, rgba(237,237,237,1) 100%);
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#ededed', GradientType=1 );
+}
+.about_right_col
+{
+/*background-color:lavender;*/
+
+margin: auto;
+}
+.about_left_col
+{
+  text-align: justify;
+  /*background-color:lavender;*/
+  margin: auto; 
+}
+/* Swiper*/
+.mentor_swiper_div
+  {
+    margin-top:5%
+  }
+.mentor_swiper_container 
+   {      
+      width: 100%;
+      height: auto;
+  }
+  .mentor_swiper_slide {
+      
+       text-align: center;
+      font-size: 18px;
+      background: #fff;
+      /* Center slide text vertically */
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: -webkit-flex;
+      display: flex;
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      -webkit-justify-content: center;
+      justify-content: center;
+      -webkit-box-align: center;
+      -ms-flex-align: center;
+      -webkit-align-items: center;
+      align-items: center;
+      height:100%;
+      width: 100%;
+      cursor: gray;
+    }
+
+.mentor_swiper_div
+    {
+      margin-top: 0px;
+      border: 1px solid lightgray;
+      background-color:white;
+    }
+.latest-product{
+      height:5%;
+      width: 100%;
+      font-size: 200%;
+      margin-top: 3%;
+      color: #900C3F;
+      text-align: center;
+      box-shadow: 1px 1px 1px 2px lightgray;
+      float: left;
+    }
+    .product-set{
+      height: auto;
+      width: 100%;
+      margin-top: 20px;
+      padding-bottom: 1%;
+      float: left;
+    }
+    .product1,.product2,.product3,.product4{
+      height: 350px;
+      width: 40%;
+      background: white;
+      margin-left:6%;
+      box-shadow: 1px 1px 1.5px 1.5px lightgray;
+      margin-top: 2%;
+      color: #900C3F;
+      float: left;
+    }
+    .product1 img{
+      height: 80%;
+      width: 100%;
+    }
+    .product2 img{
+      height: 80%;
+      width: 100%;
+    }
+    .product3 img{
+      height: 80%;
+      width: 100%;
+    }
+    .product4 img{
+      height: 80%;
+      width: 50%;
+      margin-left: 25%;
+    }
+    .p10,.p11,.p20,.p21,.p30,.p31,.p40,.p41{
+      height: 35px;
+      width: 100%;
+      text-align: center;
+      float: left;
+    }
+    .p10:hover,.p11:hover,.p20:hover,.p21:hover,.p30:hover,.p31:hover,.p40:hover,.p41:hover{
+      color: #FFC300;
+    }
+    .moreproduct{
+      color: #FFC300;
+      height: 5%;
+      width: 15%;
+      float: left;
+      margin-left: 41.5%;
+      text-align: center;
+      margin-top: 1%;
+      font-size: 120%;
+    }
+    .morepro{
+      color:#FFC300;
+    }
+    .morepro:hover{
+      color: #900C3F;
+    }
+   .footer0{
+      height: 17%;
+      width: 100%;
+      background: white;
+      bottom: 0;
+      float: left;
+      background: #900C3F;
+      margin-top: 4%;
+      box-shadow: 10px 10px 10px 10px lightgrey;
+    }
+    .footer_1{
+      height: 60%;
+      width: 40%;
+      margin-left: 5%;
+      float: left;
+      color: white;
+      font-size: 110%;
+      margin-top: 1%;
+    }
+    .footer_10{
+      height: 60%;
+      width: 16%;
+      margin-top: 10px;
+      margin-right: 3%;
+      font-size: 150%;
+      margin-bottom: 10px;
+      float: right;
+    }
+    .fa:hover {
+    opacity: 0.7;
+}
+
+.fa-facebook {
+  background: #3B5998;
+  color: white;
+}
+
+.fa-twitter {
+  background: #55ACEE;
+  color: white;
+}
+.fa-linkedin {
+  background: #09B1D3;
+  color: white;
+}
+.fa-instagram {
+  background-image: linear-gradient(to bottom right, #8E35DE, #EA7819,#EADB19);
+  color: white;
+}
+.fa-facebook, .fa-twitter, .fa-linkedin, .fa-instagram {
+  padding: 6px;
+  font-size: 160%;
+  width: 18%;
+  text-align: center;
+  text-decoration: none;
+  margin: 5px 2px;
+  border-radius: 50%;
+
+}

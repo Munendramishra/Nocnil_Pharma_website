@@ -1,0 +1,167 @@
+<?php
+$nameErr = $emailErr = $numberErr = $fileErr = "";
+$name = $email = $Mobile_No= $postno = $content = $E_mail= $uphoto=$file_size= "";
+
+
+
+
+<?php  
+
+if(isset($_REQUEST['np_medicine'])){
+    // vairable for connection
+  $servername = "localhost";  
+  $username = "";
+  $password = "";
+  $dbname = "nocnilpharma_first";
+//Create connection
+$conn = new mysqli($servername, $username, $password,$dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    // die("Connection failed: " . $conn->connect_error);
+    ?>
+    <script type="text/javascript">alert('Service Unavailable (DB-K315)!')</script>
+
+   <?php
+   exit();
+} 
+// echo "Connected successfully";
+
+
+//query execution
+ $sql = "INSERT INTO `medicine_record` (`sn`, `Name`, `Type`, `E_mail`, `Post_No`, `Content`) VALUES (NULL,'".$_POST["name"]."', '".$_POST["Mobile_No"]."  ', '".$_POST["email"]."' , '".$_POST["postno"]."  ' , '".$_POST["content"]."  ')";
+
+//testing data input
+ function test_input($data) {
+  $data = trim($data);
+  $data = stripslashes($data);
+  $data = htmlspecialchars($data);
+  return $data;
+}
+
+// define variables and set to empty values
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+
+  if (empty($_POST["name"])) {
+    $nameErr = "Name is required";
+  } else {
+    $name = test_input($_POST["name"]);
+    // check if name only contains letters and whitespace
+    if (!preg_match("/^[a-zA-Z ]*$/",$name)) {
+      $nameErr = "Only letters and white space allowed";
+    }
+  }
+  
+   if (empty($_POST["Mobile_No"])) {
+    $numberErr = "Number is Required";
+  }else{
+    $Mobile_No = test_input($_POST["Mobile_No"]);
+    // check if mobile no. only contain numbers
+    if (!preg_match("/^[0-9]*$/", $Mobile_No)) {
+      $numberErr ="Only Numerical values are allowed";   
+    }
+  }
+  
+  if (empty($_POST["email"])) {
+    $emailErr = "Email is required";
+  } else {
+    $email = test_input($_POST["email"]);
+    // check if e-mail address is well-formed
+    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+      $emailErr = "Invalid email format";
+    }
+  }
+   //inserting document file
+   if (($_FILES['my_file']['name']!="")){
+    $file_size = $_FILES['my_file']['size'];
+    $file_type = $_FILES['my_file']['type'];
+     $ext = strrchr($_FILES['my_file']['name'], ".");
+    //checking the size of input
+    if ($file_size > 1048576){      
+        $message = 'File too large. File must be less than 1 megabytes.'; 
+        echo '<script type="text/javascript">alert("'.$message.'");</script>';
+        exit();
+      }
+      elseif ((($file_type != "application/pdf")&&($file_type != "application/docx")&&($file_type != "application/doc"))&&(($ext != ".pdf") && ($ext != ".doc") && ($ext != ".docx")))
+       {
+        //check if file type is valid or not
+        $message = 'Invalid file type. Only PDF, doc , and docx types are accepted.'; 
+        echo '<script type="text/javascript">alert("'.$message.'");</script>';   
+      }else{
+  //set the file in some folder
+  $uphoto = $_FILES['my_file']['name'];
+  $utmpphoto = $_FILES['my_file']['tmp_name'];
+  $uphotofolder = 'documents/';
+  
+  $uphoto = $name."_".$uphoto;
+
+
+    move_uploaded_file($utmpphoto, $uphotofolder.$uphoto);
+
+        if ($conn->query($sql) === TRUE) {
+                    // echo "New record created successfully";
+                 echo "<script>alert('Your querry Has Been Submitted')</script>";
+
+                } else {
+                  echo "<script>alert('Service Unavailable! Unable to submit.')</script>";
+                    // echo "Error: " . $sql . "<br>" . $conn->error;
+                }           
+
+    }
+  }else{
+    $message = 'There is no file inserted, Please insert.'; 
+      echo '<script type="text/javascript">alert("'.$message.'");</script>';
+  } 
+
+
+
+  if (empty($_POST["content"])) {
+    $comment = "";
+  } else {
+    $comment = test_input($_POST["content"]);
+  }
+
+}
+
+ 
+
+}
+?>
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>form</title>
+</head>
+<body>
+<form method="post" action="sorm.php" enctype="multipart/form-data">
+	<label class="label">Name:</label>
+          <b><input type="text" name="name" required value="<?php echo $name;?>"></b>
+        <label class="label">Company:</label>
+          <input type="text" required name="Mobile_No" value="<?php echo $Mobile_No;?>" >
+
+   			<label class="label">Type:</label>
+          <input type="text" required name="Mobile_No" value="<?php echo $Mobile_No;?>" >
+        
+   			
+        <label class="label">pack of:</label>
+          <input type="text" required name="email" value="<?php echo $E_mail;?>" >
+      
+   			
+        <label class="label">Main content:</label>
+          <input type="text" required name="postno" value="<?php echo $postno?>" >
+          <label class="label">Remaining content:</label>
+          <input type="text" required name="postno" value="<?php echo $postno?>" >
+        
+   			
+        <label class="label">Upload image:</label>
+          <input type="file" id="my_file" name="my_file" />
+        
+   			
+        
+
+   			<button type="submit" class="submit" name="np_medicine"><b>SUBMIT</b></button>
+</form>
+</body>
+</html>
